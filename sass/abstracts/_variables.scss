@@ -1,0 +1,32 @@
+// COLORS
+//light and dark color 
+$color-white: #fff;
+$color-black: #000;
+//primary colors
+$color-red : #cd1c1c;
+$color-blue :#09a1ff;
+$color-green :rgb(84, 255, 42);
+$color-yellow : rgb(252, 255, 47);
+
+$color-grey-light-1: #F7F7F7;
+$color-grey-light-2: #eee;
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+// Next step: Create fcn that calc primary-light-dark;
+$color-primary: #55C57A;
+$color-primary-light: #7ED56F;
+$color-primary-dark: #28B485;
+$color-secondary-light: #FFB900;
+$color-secondary-dark: #FF7730;
+$color-tertiary-light: #2998FF;
+$color-tertiary-dark: #5643FA;
+
+// FONT
+$default-font-size: 1.6rem;
+// GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;
