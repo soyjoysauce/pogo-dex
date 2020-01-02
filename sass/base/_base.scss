@@ -59,13 +59,17 @@ ORDER: Base + typography > general layout + grid > page layout > components
 1em = 16px
 */
 
+//Body Styling
 body {
   font-family: Arial, Helvetica, sans-serif;
-   
 }
 
 body#background {
-  height: -webkit-fill-available;
+  // height: -webkit-fill-available;
+  background-color: $color-black;
+  color: $color-white;
+  animation: moveInLeft 3s 1;
+  text-align: center;
 }
 
 #PoGo-Dex-title {
@@ -73,119 +77,11 @@ body#background {
 }
 
 //MAIN container
-div#pokeDexContainer {
-  background-color: $color-blue;
-  width: 70rem;
-  height: 79rem;
-  margin: auto;
-  cursor: pointer;  /* The entire pokeDexContainer is clickable area. */
+div#pokeDex {
+  width: 31em;
+  height: 44em;
+  display: inline-flex;
+  cursor: pointer;
 }
 
-//Back where screen/interactive buttons are at
-div#pokeDexBack {
-  width: inherit;
-  height: inherit;
-  background-color: $color-red;
-}
-
-// Begin pokeDexFront and frontOutLine Div
-div#pokeDexFront {
-  width: 69rem;
-  height: 69rem;
-  bottom: 3.5rem;
-  left: 2em;
-  position: absolute;
-  transform: translateX(26.5rem);
-  background-color: $color-red;
-  clip-path: polygon(62% 0, 100% 0, 100% 100%, 0 100%, 0 13%, 53% 13%);
-}
-
-div#pDFrontOutline {
-  width: 69rem;
-  height: 70rem;
-  bottom: 3.5rem;
-  left: 2em;
-  position: absolute;
-  transform: translateX(26.5rem);
-  background-color: $color-black;
-  clip-path: polygon(62% 0, 100% 0, 100% 100%, 0 100%, 0 13%, 53% 13%);
-}
-
-//triangle inside PokeDex cover
-div.rightTriangle {
-  width: 0;
-  height: 0;
-  border-top: 1em solid transparent;
-  border-left: 2em solid #555;
-  border-bottom: 1em solid transparent;
-  position: absolute;
-  transform: translate(1em, 15em);
-}
-
-//PokeDex Spine Style
-ul.pDSpine {
-  display: inline-grid;
-  width: 1em;
-  height: inherit;
-  float: right;
-  list-style-type: none;
-}
-
-ul.pDSpine>li {
-  border: 1px solid black;
-}
-
-li.spine1 {}
-
-li.spine2 {}
-
-li.spine3 {}
-
-// End pokeDexFront and frontOutLine Div
-// 4 Buttons @ top Left
-ul.buttonContainer {
-  list-style: unset;
-  display: flex;
-  list-style-type: none;
-  padding-top: 1em;
-  padding-left: 1em;
-}
-
-li.button {
-  border: 1px solid $color-black;
-  width: 2em;
-  height: 2em;
-  border-radius: 1em;
-}
-
-li.button.blue {
-  background-color: $color-blue;
-  width: 6em;
-  height: 6em;
-  border-radius: 3em;
-  margin-right: 2em;
-}
-
-li.button.red {
-  background-color: $color-red;
-}
-
-li.button.yellow {
-  background-color: $color-yellow;
-}
-
-li.button.green {
-  background-color: $color-green;
-}
-
-li.button.red,
-li.button.yellow,
-li.button.green {
-  margin-right: 0.5em;
-}
-
-//Inside Contents 
-div#spriteScreen {
-  background-color: lightblue;
-
-}
+/* The entire pokeDex is clickable area. */

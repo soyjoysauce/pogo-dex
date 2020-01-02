@@ -6,21 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="css/style.css" rel="stylesheet" />
-
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+  
   <title>PoGo-Dex</title>
 </head>
 
 <body id="background">
   <h1 id="PoGo-Dex-title">PoGo Dex</h1>
-  <div id="pokeDexContainer">
-    <div id="pDFrontOutline"></div>
-    <div id="pokeDexFront">
-      <div class="rightTriangle"></div>
-      <ul class="pDSpine">
-        <li class="spine1"></li>
-        <li class="spine2"></li>
-        <li class="spine3"></li>
-      </ul>
+  <div id="pokeDex">
+    <div class="pDFrontContainer">
+      <div id="pDFrontOutline"></div>
+      <div id="pokeDexFront">
+        <div class="rightTriangle"></div>
+        <ul class="pDSpine">
+          <li class="spine1"></li>
+          <li class="spine2"></li>
+          <li class="spine3"></li>
+        </ul>
+      </div>
     </div>
     <div id="pokeDexBack">
       <!-- This is the back of the book -->
@@ -30,10 +35,16 @@
         <li class="button yellow"></li>
         <li class="button green"></li>
       </ul>
+      <div class="mainPokeDex">
+        <div id="spriteScreen"></div>
+        <div class="weightType"></div>
+        <div class="fourDirectional"></div>
+      </div>
     </div>
   </div>
- 
-<div id="spriteScreen"></div>
+  <!-- //pokeDexContainer -->
+  <div class="pdInnerCover">
+    
   </div>
 </body>
 

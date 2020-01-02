@@ -1,0 +1,74 @@
+// This is the back of the pokeDexContainer
+
+//Back where screen/interactive buttons are at
+// 4 Buttons @ top Left
+div#pokeDexBack {
+  width: inherit;
+  height: inherit;
+  background-color: $color-red;
+}
+
+ul.buttonContainer {
+  list-style: unset;
+  display: flex;
+  list-style-type: none;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+}
+
+li.button {
+  border: 4px solid $color-black;
+  width: 2em;
+  height: 2em;
+  border-radius: 1em;
+}
+
+li.button.blue {
+  width: 6em;
+  height: 6em;
+  border-radius: 3em;
+  margin-right: 2em;
+}
+
+li.button.red,
+li.button.yellow,
+li.button.green {
+  margin-right: 0.5em;
+}
+
+//Inside pokeDexContainer
+
+div.mainPokeDex {
+  width: 30em;
+  height: 35em;
+  border: 1px solid white;
+}
+
+div#spriteScreen {
+  background-color: lightblue;
+  width: 20em;
+  height: 20em;
+  text-align: center;
+  margin: auto;
+  margin-top: 2em;
+}
+
+div.weightType {
+  width: 13em;
+  height: 9em;
+  background-color: grey;
+  display: inline-block;
+  margin: 2em;
+}
+
+div.fourDirectional {
+  clip-path: polygon(0% 30%, 30% 30%, 30% 0%, 70% 0%, 70% 30%, 100% 30%, 100% 70%, 70% 70%, 70% 100%, 30% 100%, 30% 70%, 0% 70%);
+  width: 8em;
+  height: 8em;
+  background-color: grey;
+  display: inline-block;
+  margin-bottom: 2em;
+  margin-left: 1em;
+}
+

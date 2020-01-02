@@ -1,0 +1,62 @@
+// Begin pokeDexFront and frontOutLine Div
+div.pDFrontContainer {
+  height: 33em;
+  position: absolute;
+  width: inherit;
+  bottom: 1em;
+  top: 14em;
+  visibility: hidden;
+}
+
+div#pokeDexFront {
+  width: inherit;
+  height: 70rem;
+  bottom: 1rem;
+  /* left: 2em; */
+  position: absolute;
+  /* transform: translateX(26.5rem); */
+  background-color: #cd1c1c;
+  clip-path: polygon(62% 0, 100% 0, 100% 100%, 0 100%, 0 13%, 53% 13%);
+}
+
+div#pDFrontOutline {
+  width: inherit;
+  height: 35em;
+  top: -3em;
+  position: absolute;
+  /* transform: translateX(26.5rem); */
+  background-color: #000;
+  clip-path: polygon(62% 0, 100% 0, 100% 100%, 0 100%, 0 13%, 53% 13%);
+}
+
+//triangle inside PokeDex cover
+div.rightTriangle {
+  width: 0;
+  height: 0;
+  border-top: 1em solid transparent;
+  border-left: 2em solid #555;
+  border-bottom: 1em solid transparent;
+  position: absolute;
+  transform: translate(1em, 15em);
+}
+
+//PokeDex Spine Style
+ul.pDSpine {
+  display: inline-grid;
+  width: 1em;
+  height: inherit;
+  float: right;
+  list-style-type: none;
+}
+
+ul.pDSpine>li {
+  border: 1px solid black;
+}
+
+// li.spine1 {}
+
+// li.spine2 {}
+
+// li.spine3 {}
+
+// End pokeDexFront and frontOutLine Div
