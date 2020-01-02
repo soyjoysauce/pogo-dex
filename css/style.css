@@ -55,6 +55,12 @@ ORDER: Base + typography > general layout + grid > page layout > components
 .white {
   background-color: #fff; }
 
+.black {
+  background-color: #000; }
+
+.grey-dark {
+  background-color: #777; }
+
 *,
 *::after,
 *::before {
@@ -119,6 +125,13 @@ div#pokeDex {
   height: 44em;
   display: inline-flex;
   cursor: pointer; }
+
+.btn {
+  width: 1em;
+  height: 1em; }
+
+.circle {
+  border-radius: 3em; }
 
 /* The entire pokeDex is clickable area. */
 @font-face {
@@ -217,18 +230,17 @@ body {
   margin-top: 10rem !important; }
 
 div.pDFrontContainer {
-  height: 33em;
+  z-index: 5;
+  height: 36em;
   position: absolute;
   width: inherit;
-  bottom: 1em;
-  top: 14em;
-  visibility: hidden; }
+  top: 13em; }
 
 div#pokeDexFront {
   width: inherit;
-  height: 70rem;
+  height: 39em;
   bottom: 1rem;
-  /* left: 2em; */
+  top: -2.5em;
   position: absolute;
   /* transform: translateX(26.5rem); */
   background-color: #cd1c1c;
@@ -236,7 +248,7 @@ div#pokeDexFront {
 
 div#pDFrontOutline {
   width: inherit;
-  height: 35em;
+  height: 40em;
   top: -3em;
   position: absolute;
   /* transform: translateX(26.5rem); */
@@ -267,7 +279,7 @@ div#pokeDexBack {
   height: inherit;
   background-color: #cd1c1c; }
 
-ul.buttonContainer {
+ul.btnContainer {
   list-style: unset;
   display: flex;
   list-style-type: none;
@@ -275,27 +287,24 @@ ul.buttonContainer {
   padding-left: 1em;
   padding-bottom: 1em; }
 
-li.button {
+ul.btnContainer > li.btn {
   border: 4px solid #000;
   width: 2em;
-  height: 2em;
-  border-radius: 1em; }
+  height: 2em; }
 
-li.button.blue {
+ul.btnContainer > li.btn.blue {
   width: 6em;
   height: 6em;
-  border-radius: 3em;
   margin-right: 2em; }
 
-li.button.red,
-li.button.yellow,
-li.button.green {
+ul.btnContainer > li.btn.red,
+ul.btnContainer > li.btn.yellow,
+ul.btnContainer > li.btn.green {
   margin-right: 0.5em; }
 
 div.mainPokeDex {
   width: 30em;
-  height: 35em;
-  border: 1px solid white; }
+  height: 35em; }
 
 div#spriteScreen {
   background-color: lightblue;
@@ -325,5 +334,39 @@ div.pdInnerCover {
   background-color: #cd1c1c;
   display: inline-block;
   width: 31em;
-  height: 44em;
-  vertical-align: bottom; }
+  height: 39em;
+  vertical-align: bottom;
+  margin-bottom: 1em;
+  clip-path: polygon(44% 0, 53% 11%, 100% 11%, 100% 100%, 0 100%, 0 0); }
+
+div.textBox {
+  width: 25em;
+  height: 15em;
+  background-color: grey;
+  display: inline-block;
+  margin: 7em 0em 2em; }
+
+ul.gridBtnCont {
+  width: 24em;
+  height: 3em;
+  display: inline-block;
+  list-style-type: none; }
+
+li.gridBtn {
+  width: 5em;
+  height: 2em;
+  display: inline-flex; }
+
+div.bottomBtn {
+  display: inline-block; }
+
+ul.twoBtn {
+  display: inline-block; }
+
+ul.twoBtn > li.circle.btn.yellow {
+  display: inline-flex;
+  margin: .5em 1em 0em 2em;
+  font-size: 2em; }
+
+ul.twoBtn.grey {
+  margin-top: 1em; }

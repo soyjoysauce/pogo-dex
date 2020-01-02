@@ -1,18 +1,18 @@
 // Begin pokeDexFront and frontOutLine Div
 div.pDFrontContainer {
-  height: 33em;
+  z-index: 5;
+  height: 36em;
   position: absolute;
   width: inherit;
-  bottom: 1em;
-  top: 14em;
-  visibility: hidden;
+  top: 13em;
+  // visibility: hidden;
 }
 
 div#pokeDexFront {
   width: inherit;
-  height: 70rem;
+  height: 39em;
   bottom: 1rem;
-  /* left: 2em; */
+  top:-2.5em;
   position: absolute;
   /* transform: translateX(26.5rem); */
   background-color: #cd1c1c;
@@ -21,7 +21,7 @@ div#pokeDexFront {
 
 div#pDFrontOutline {
   width: inherit;
-  height: 35em;
+  height: 40em;
   top: -3em;
   position: absolute;
   /* transform: translateX(26.5rem); */
