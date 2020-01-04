@@ -1,20 +1,21 @@
 $(document).ready(function () {
-  console.log("hello world");
-  let pokeDexCover = $(".pDFrontContainer");
-  console.log('pokeDexCover :', pokeDexCover);
-
-
-  pokeDexCover.click(function(e) {
-    console.log('clicked the cover');
-    //if clicked on pokeDexCover
-    if (e === pokeDexCover) {
-      console.log("open!")
-      //plug in animation by using toggleClass()to apply openPokedex
-      openPokeDex();
-    } else {
-      console.log("closed!")
-      closePokeDex();
-    }
-  });
-
+  //create a event handler that handles all the click and fcn
+  openPokeDex();
+  closePokeDex();
 });
+
+const openPokeDex = () => {
+  $("#pokeDexFront").click(function(){
+    console.log('clicked to open');
+    $("#pDFrontContainer").addClass("openDex");
+    // $("#pDFrontContainer").attr("display","none");
+
+  })
+  
+}
+
+const closePokeDex = () => {
+  $("#close").click(function(){
+    console.log('clicked to close')
+  })
+}

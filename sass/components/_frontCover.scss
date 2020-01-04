@@ -1,11 +1,11 @@
 // Begin pokeDexFront and frontOutLine Div
-div.pDFrontContainer {
+div#pDFrontContainer {
   z-index: 5;
   height: 36em;
   position: absolute;
   width: inherit;
-  top: 13em;
-  // visibility: hidden;
+  top: 6em;
+  
 }
 
 div#pokeDexFront {
@@ -60,3 +60,5 @@ ul.pDSpine>li {
 // li.spine3 {}
 
 // End pokeDexFront and frontOutLine Div
+
+

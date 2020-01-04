@@ -1,38 +1,73 @@
 @keyframes moveInLeft {
   0% {
-      opacity: 0;
-      transform: translateX(-10rem);
+    opacity: 0;
+    transform: translateX(-10rem);
   }
+
   80% {
-      transform: translateX(1rem);
+    transform: translateX(1rem);
   }
+
   100% {
-      opacity: 1;
-      transform: translate(0);
+    opacity: 1;
+    transform: translate(0);
   }
 }
+
 @keyframes moveInRight {
   0% {
-      opacity: 0;
-      transform: translateX(10rem);
+    opacity: 0;
+    transform: translateX(10rem);
   }
+
   80% {
-      transform: translateX(-1rem);
+    transform: translateX(-1rem);
   }
+
   100% {
-      opacity: 1;
-      transform: translate(0);
+    opacity: 1;
+    transform: translate(0);
   }
 }
+
 @keyframes moveInBottom {
   0% {
-      opacity: 0;
-      transform: translateY(3rem);
+    opacity: 0;
+    transform: translateY(3rem);
   }
+
   100% {
-      opacity: 1;
-      transform: translate(0);
+    opacity: 1;
+    transform: translate(0);
   }
 }
 
 //Create Animation that flips book from left to right
+@keyframes bookOpen {
+  10%{
+    transform: rotateY(20deg);
+    z-index: 999;
+    transform-origin: right;
+  }
+  
+  50% {
+    transform: rotateY(80deg);
+    z-index: 999;
+  }
+  
+  100% {
+    transform: rotateY(190deg);
+    z-index: 999;
+  }
+}
+
+@keyframes bookClose {
+  30% {
+    z-index: 999
+  }
+
+  100% {
+    transform: rotateY(180deg);
+    z-index: 1;
+  }
+}

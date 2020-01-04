@@ -82,6 +82,8 @@ div#pokeDex {
   height: 44em;
   display: inline-flex;
   cursor: pointer;
+  transform-style: preserve-3d;
+  
 }
 
 .btn {
@@ -94,3 +96,16 @@ div#pokeDex {
 }
 
 /* The entire pokeDex is clickable area. */
+
+.openDex {
+  animation: bookOpen 5s ;
+  transform-style: preserve-3d;
+
+
+}
+
+.closeDex {
+  animation: bookClose 5s;
+  transform-style: preserve-3d;
+
+}
