@@ -1,33 +1,117 @@
-// Begin pokeDexFront and frontOutLine Div
-div#pDFrontContainer {
-  z-index: 5;
-  height: 36em;
-  position: absolute;
-  width: inherit;
-  top: 6em;
-  
-}
+// Begin frontCover and frontOutLine Div
+// div.frontCoverBox {
+//   // height: inherit;
+//   // top: 6em;
+//   width: 100%;
+// }
 
-div#pokeDexFront {
-  width: inherit;
-  height: 39em;
-  bottom: 1rem;
-  top:-2.5em;
-  position: absolute;
-  /* transform: translateX(26.5rem); */
-  background-color: #cd1c1c;
-  clip-path: polygon(62% 0, 100% 0, 100% 100%, 0 100%, 0 13%, 53% 13%);
-}
 
-div#pDFrontOutline {
-  width: inherit;
-  height: 40em;
-  top: -3em;
-  position: absolute;
-  /* transform: translateX(26.5rem); */
+//@
+// div.frontCoverBox,
+div.blkOutline ,
+div.frontRedCover,
+div.innerCover {
+  width: 100%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: right center;
+  -moz-transform-origin: right center;
+  -o-transform-origin: right center;
+  transform-origin: right center;
+  backface-visibility: hidden;
+
+}
+// div.frontCoverBox {
+//   -webkit-transition: -webkit-transform 0s;
+//   -moz-transition: -moz-transform 0s;
+//   -o-transition: -o-transform 0s;
+//   transition: transform 0s;
+// }
+
+div.blkOutline {
   background-color: #000;
   clip-path: polygon(62% 0, 100% 0, 100% 100%, 0 100%, 0 13%, 53% 13%);
+  -webkit-transition: -webkit-transform 0.9s;
+  -moz-transition: -moz-transform 0.9s;
+  -o-transition: -o-transform 0.9s;
+  transition: transform 0.9s;
 }
+
+div.frontRedCover {
+  background-color: #cd1c1c;
+  clip-path: polygon(62% 0, 100% 0, 100% 100%, 0 100%, 0 13%, 53% 13%);
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+}
+
+div.innerCover {
+  height: auto;
+  width: 45em;
+  -webkit-transition: -webkit-transform 0s;
+  -moz-transition: -moz-transform 0s;
+  -o-transition: -o-transform 0s;
+  transition: transform 0s;
+  visibility: hidden;
+  padding: 1em;
+}
+
+
+div.innerCover.flipped {
+  height: 56em;  
+  width: 45em;
+  // position: absolute;
+  margin-top: 1em;
+  -webkit-transform: rotateY(180deg) translateX(-100%);
+  -moz-transform: rotateY(180deg) translateX(-100%);
+  -ms-transform: rotateY(180deg) translateX(-100%);
+  -o-transform: rotateY(180deg) translateX(-100%);
+  transform:  rotateY(180deg) translateX(-100%);
+  backface-visibility: visible;
+  -webkit-transition: -webkit-transform 1.5s;
+  -moz-transition: -moz-transform 1.5s;
+  -o-transition: -o-transform 1.5s;
+  transition: transform 1.5s;
+  transform-origin: left center;
+  z-index: 500;
+  visibility: visible;
+}
+
+
+div.blkOutline.flipped,
+div.frontRedCover.flipped{
+  -webkit-transform: translateY(0%) rotateY(180deg);
+  -moz-transform: translateY(0%) rotateY(180deg);
+  -ms-transform: translateY(0%) rotateY(180deg);
+  -o-transform: translateY(0%) rotateY(180deg);
+  transform: translateY(0%) rotateY(180deg);
+  z-index: -500;
+  backface-visibility: visible;
+  -webkit-transition: -webkit-transform 1.5s;
+  -moz-transition: -moz-transform 1.5s;
+  -o-transition: -o-transform 1.5s;
+  transition: transform 1.5s;
+  transform-origin: right;
+}
+
+div.frontRedCover.flipped {
+  //@
+  // z-index: 199;
+  height: 63.5em;
+  //@
+}
+
+div.blkOutline.flipped {
+  //@
+  // z-index: 200;
+  height: 63.5em;
+  //@
+}
+
+//@
 
 //triangle inside PokeDex cover
 div.rightTriangle {
@@ -41,7 +125,7 @@ div.rightTriangle {
 }
 
 //PokeDex Spine Style
-ul.pDSpine {
+div.frontRedCover>ul.pDSpine {
   display: inline-grid;
   width: 1em;
   height: inherit;
@@ -49,16 +133,65 @@ ul.pDSpine {
   list-style-type: none;
 }
 
-ul.pDSpine>li {
+div.frontRedCover>ul.pDSpine>li {
   border: 1px solid black;
 }
 
-// li.spine1 {}
+// End frontCover and frontOutLine Div
 
-// li.spine2 {}
+//inner cover for pokeDex
+div.innerCover {
+  background-color:#cd1c1c;
+  // display: inline-flex;
+  vertical-align: top;
+  // margin-top: 6em;
+  // clip-path: polygon(62% 0, 100% 0, 100% 100%, 0 100%, 0 13%, 53% 13%);
+}
 
-// li.spine3 {}
+div.innerBtnBx.flipped {
+  padding: 0em 1em 1em;
+}
 
-// End pokeDexFront and frontOutLine Div
+div.textBox {
+  min-width: 40em;
+  height: 35em;
+  background-color: grey;
+  display: flex;
+  margin: 5em 0em 2em;
+}
 
+div.btnRw1 {
+  text-align: center;
+  // height: 25em;
+}
 
+ul.gridBtnBx {
+  width: 24em;
+  height: auto;
+  display: inline-block;
+  list-style-type: none;
+}
+
+li.gridBtn {
+  width: 5em;
+  height: 2em;
+  display: inline-flex;
+}
+
+div.bottomBtn {
+  display: inline-block;
+}
+
+ul.twoBtn {
+  display: inline-block;
+}
+
+ul.twoBtn>li.circle.btn.yellow {
+  display: inline-flex;
+  margin: .5em 1em 0em 2em;
+  font-size: 2em;
+}
+
+ul.twoBtn.grey {
+  margin-top: 1em;
+}

@@ -1,0 +1,82 @@
+// div#bodyGrid {
+//   display: grid;
+//   grid-template-columns: [col1-start] auto [col1-end col-2start] auto [col2-end];
+//   grid-template-rows: [row1-start] auto [row2-start];
+//   // grid-template-areas: "header header header" "main main main" "footer footer footer";
+//   grid-auto-rows: 0;
+//   grid-auto-columns: 0;
+// }
+
+header#mainNav {
+  grid-area: header;
+  grid-column: col-1start / col1-end;
+  grid-row: row1-start / row1-end;
+}
+
+div#pokeDex {
+  width: 45em;
+  height: 70em;
+  display: grid;
+  grid-template-columns: [col1-start] auto [col1-end col2-start] auto [col2-end];
+  grid-template-rows: [row1-start] 10em [row1-end row2-start] auto[row2-end];
+  grid-auto-rows: 0;
+  grid-auto-columns: 0;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  //@
+  position: relative;
+  // margin: 0em auto 40em;
+  -webkit-perspective: 800em;
+  -moz-perspective: 800em;
+  -o-perspective: 800em;
+  perspective: 800em;
+  //@
+}
+
+div.topCover {
+  display: flex;
+  // position: absolute;
+  grid-column: col1-start / col1-end;
+  grid-row: row1-start / row1-end;
+  z-index: 600;
+}
+
+// div.frontCoverBox{
+//   grid-column: col1-start / col1-end;
+//   grid-row: row1-end / row2end;
+// }
+
+div.backCoverBox {
+  grid-column: col1-start / col1-end;
+  grid-row: row1-start / row2-end;
+}
+
+div.frontRedCover,
+div.blkOutline{
+  position: fixed;
+  width: 100%;
+  // height: 65em;
+  grid-column: col1-start / col1-end;
+  grid-row: row1-end / row2end;
+}
+
+div.frontRedCover {
+  height: 63.5em;
+  top: -7em;
+  bottom: 1rem;
+}
+
+div.blkOutline {
+  top: -8em;
+  height: 65em;
+}
+
+div.innerCover {
+  grid-column: col1-start / col1-end;
+  grid-row: row1-end / row2end;
+}
+
+div.innerCover.flipped {
+  grid-column: col2-start / col2-end;
+  grid-row: row1-end / row2end;
+}

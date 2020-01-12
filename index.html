@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,63 +11,69 @@
   <script src="index.js"></script>
   <title>PoGo-Dex</title>
 </head>
-
 <body id="background">
   <h1 id="PoGo-Dex-title">PoGo Dex</h1>
-  <div id="pokeDex">
-    <div id="pDFrontContainer">
-      <div id="pDFrontOutline"></div>
-      <div id="pokeDexFront">
-        <div class="rightTriangle"></div>
-        <ul class="pDSpine">
-          <li class="spine1"></li>
-          <li class="spine2"></li>
-          <li class="spine3"></li>
-        </ul>
+    <div id="pokeDex"> <!-- Begin pokeDex Container -->
+      <div class="topCover">
+        
+        <span id="openClose"class="circle btn blue"></span>
+        <span class="circle btn red"></span>
+        <span class="circle btn yellow"></span>
+        <span class="circle btn green"></span>
       </div>
-    </div>
-    <div id="pokeDexBack">
-      <!-- This is the back of the book -->
-      <ul class="btnContainer">
-        <li class="circle btn blue"></li>
-        <li class="circle btn red"></li>
-        <li class="circle btn yellow"></li>
-        <li class="circle btn green"></li>
-      </ul>
-      <div class="mainPokeDex">
-        <div id="spriteScreen"></div>
-        <div class="weightType"></div>
-        <div class="fourDirectional"></div>
-      </div>
-    </div>
-  </div>
-  <!-- //pokeDexContainer -->
-  <div class="pdInnerCover">
-    <div class="textBox"></div>
-    <ul class="gridBtnCont">
-      <li class="gridBtn blue"></li>
-      <li class="gridBtn blue"></li>
-      <li class="gridBtn blue"></li>
-      <li class="gridBtn blue"></li>
-      <li class="gridBtn blue"></li>
-      <li class="gridBtn blue"></li>
-      <li class="gridBtn blue"></li>
-      <li class="gridBtn blue"></li>
-    </ul>
-    <div class="bottomBtn">
-      <ul class="twoBtn">
-        <li class="gridBtn white"></li>
-        <li class="gridBtn white"></li>
-        <li class="circle btn yellow"></li>
-      </ul>
-    </div>
-    <div>
-      <ul id="close" class="twoBtn grey">
-        <li class="gridBtn grey-dark"></li>
-        <li class="gridBtn grey-dark"></li>
-      </ul>
-    </div>
-  </div>
+      <!-- <div class="frontCoverBox">  Begin div containing all 3 parts of 'front' cover -->
+        <div class="innerCover"> <!-- Begin inner part of 'flip' Cover -->
+          <div class="innerBtnBx">
+            <div class="textBox"></div>
+            <div class="btnRw1">
+              <ul class="gridBtnBx">
+                <li class="gridBtn blue"></li>
+                <li class="gridBtn blue"></li>
+                <li class="gridBtn blue"></li>
+                <li class="gridBtn blue"></li>
+                <li class="gridBtn blue"></li>
+                <li class="gridBtn blue"></li>
+                <li class="gridBtn blue"></li>
+                <li class="gridBtn blue"></li>
+              </ul>
+              <div class="bottomBtn">
+                <ul class="twoBtn">
+                  <li class="gridBtn white"></li>
+                  <li class="gridBtn white"></li>
+                  <li class="circle btn yellow"></li>
+                </ul>
+              </div>
+            </div>
+            <div class="btnRw2">
+              <ul id="close" class="twoBtn grey">
+                <li class="gridBtn grey-dark"></li>
+                <li class="gridBtn grey-dark"></li>
+              </ul>
+            </div>
+          </div>
+        </div> <!-- End inner part of 'flip' Cover -->
+        <div class="blkOutline"></div>
+        <div class="frontRedCover"> <!-- Begin the visible front of cover before 'flip' -->
+          <div class="rightTriangle"></div>
+          <div class="pDSpine">
+            <span class="spine1"></span>
+            <span class="spine2"></span>
+            <span class="spine3"></span>
+          </div>
+        </div> <!-- End the visible front of cover before 'flip' -->
+      <!-- </div> End div containing all 3 parts of 'front' cover -->
+      <div class="backCoverBox"> <!-- Begin 'back' of pokeDex -->
+        <div class="mainPokeDex">
+          <div class="pDSpine">
+            <span class="spine1"></span>
+            <span class="spine2"></span>
+            <span class="spine3"></li>
+          </div>
+          <div id="spriteScreen"></div>
+          <div class="weightType"></div>
+          <div class="fourDirectional"></div>
+        </div>
+      </div> <!-- End 'back' of pokeDex -->
+    </div> <!-- End pokeDex Container -->
 </body>
-
 </html>

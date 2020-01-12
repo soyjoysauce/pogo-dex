@@ -6,13 +6,6 @@ $pokeFontHollow : "fonts/Pokemon Hollow.ttf";
   src: url("../../fonts/Pokemon_Solid.ttf") format("truetype");
 }
 
-body {
-  font-family: 'pokeFontR' , sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: $color-black;
-}
-
 .heading-primary {
   color: $color-white;
   text-transform: uppercase;

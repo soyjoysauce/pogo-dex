@@ -8,12 +8,15 @@
 @import "base/typography";
 @import "base/utilities";
 @import "abstracts/functions";
+@import "layout/grid";
 
 //components
 @import "components/frontCover";
 
 @import "components/backCover";
 
-@import "components/innerFrontCover";
+// @import "components/innerFrontCover";
 
+@import "components/navBar";
 
+@import "components/navButton";
