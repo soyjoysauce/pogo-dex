@@ -1,0 +1,44 @@
+.btn {
+  width: 1em;
+  height: 1em;
+  border-radius: .5em;
+  display: inline-flex;
+  
+  &.grid {
+    width: 10em;
+    height: 2.5em;
+    margin: .5em;
+    text-align: center;   
+  }
+
+  &.circle {
+    border-radius: 3em;
+    
+    &.yellow{
+      display: inline-block;
+    }
+  }
+}
+
+
+// &.sm {
+  //   width: 1em;
+  //   height: 1em;
+  //   font-size: 1em;
+  // }
+
+  // &.md {
+  //   width: 2em;
+  //   height: 2em;
+  //   font-size: 2em;
+  // }
+
+  // &.lg {
+  //   width: 3em;
+  //   height: 3em;
+  //   font-size: 3em;
+  // }
+
+  // &.red {
+  //   background-color: red;
+  // }

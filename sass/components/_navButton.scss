@@ -1,32 +1,18 @@
-.btn {
-  width: 1em;
-  height: 1em;
-}
-
-.circle {
-  border-radius: 3em;
-}
-
 div.topCover {
-  // list-style: unset;
-  // display: flex;
-  // list-style-type: none;
   padding-top: 1em;
   padding-left: 1em;
   padding-bottom: 1em;
 }
 
 div.topCover > span.btn {
-  border: 4px solid $color-black;
+  border: 4px solid $black;
   width: 2em;
   height: 2em;
-  // border-radius: 1em;
 }
 
 div.topCover > span.btn.blue {
   width: 6em;
   height: 6em;
-  // border-radius: 3em;
   margin-right: 2em;
   font-size: 1.5em;
 }

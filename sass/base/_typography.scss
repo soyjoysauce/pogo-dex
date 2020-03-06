@@ -7,7 +7,7 @@ $pokeFontHollow : "fonts/Pokemon Hollow.ttf";
 }
 
 .heading-primary {
-  color: $color-white;
+  color: $white;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem;
@@ -44,7 +44,7 @@ $pokeFontHollow : "fonts/Pokemon Hollow.ttf";
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  background-image: linear-gradient(to right, $primary-light, $primary-dark);
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: .2rem;
@@ -57,7 +57,7 @@ $pokeFontHollow : "fonts/Pokemon Hollow.ttf";
   }
   &:hover {
       transform: skewY(2deg) skewX(15deg) scale(1.1);
-      text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+      text-shadow: .5rem 1rem 2rem rgba($black, .2);
   }
 }
 .heading-tertiary {
