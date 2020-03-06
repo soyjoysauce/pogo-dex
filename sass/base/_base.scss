@@ -1,3 +1,10 @@
+
+
+//Font Variables
+$montserrat : 'Montserrat',serif;
+$orbitron : 'Orbitron', sans-serif;
+$pressStart2P : 'Press Start 2P',sans-serif;
+
 *,
 *::after,
 *::before {
@@ -9,6 +16,11 @@
 html {
   // This defines what 1rem is
   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  ul{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+  }
 
   @include respond(tab-land) {
     // width < 1200?
@@ -35,8 +47,8 @@ body {
 }
 
 ::selection {
-  background-color: $color-grey-dark-3;
-  color: $color-white;
+  background-color: $grey-dark-3;
+  color: $white;
 }
 
 //layouts
@@ -61,36 +73,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 //Body Styling
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: $black;
+  color: $white;
+  font-family: 'pokeFontR' , sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
 }
-
-body#background {
-  // height: -webkit-fill-available;
-  background-color: $color-black;
-  color: $color-white;
-  animation: moveInLeft 3s 1;
-  text-align: center;
-}
-
-#PoGo-Dex-title {
-  text-align: center;
-}
-
-//MAIN container
-div#pokeDex {
-  width: 31em;
-  height: 44em;
-  display: inline-flex;
-  cursor: pointer;
-}
-
-.btn {
-  width:1em;
-  height:1em;
-}
-
-.circle {
-  border-radius: 3em;
-}
-
-/* The entire pokeDex is clickable area. */

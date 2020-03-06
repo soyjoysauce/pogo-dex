@@ -1,38 +1,88 @@
 @keyframes moveInLeft {
   0% {
-      opacity: 0;
-      transform: translateX(-10rem);
+    opacity: 0;
+    transform: translateX(-10rem);
   }
+
   80% {
-      transform: translateX(1rem);
+    transform: translateX(1rem);
   }
+
   100% {
-      opacity: 1;
-      transform: translate(0);
-  }
-}
-@keyframes moveInRight {
-  0% {
-      opacity: 0;
-      transform: translateX(10rem);
-  }
-  80% {
-      transform: translateX(-1rem);
-  }
-  100% {
-      opacity: 1;
-      transform: translate(0);
-  }
-}
-@keyframes moveInBottom {
-  0% {
-      opacity: 0;
-      transform: translateY(3rem);
-  }
-  100% {
-      opacity: 1;
-      transform: translate(0);
+    opacity: 1;
+    transform: translate(0);
   }
 }
 
-//Create Animation that flips book from left to right
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes visible {
+  0% {
+    visibility: hidden;
+  }
+
+  30% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
+    
+  }
+}
+
+@keyframes hidden {
+  0% {
+    visibility: visible;
+  }
+  30% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes open {
+  0% {
+    transform: translate(0em, 0em) rotateY(0deg);
+  }
+  100% {
+    transform: translate(1em, 0em) rotateY(180deg);
+  }
+}
+
+@keyframes openMobile {
+  0% {
+    transform: translate(0em, 0em) rotateX(0deg);
+  }
+  100% {
+    transform: translate(0em, 1em) rotateX(-180deg);
+  }
+}

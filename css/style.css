@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -25,6 +28,34 @@
   100% {
     opacity: 1;
     transform: translate(0); } }
+
+@keyframes visible {
+  0% {
+    visibility: hidden; }
+  30% {
+    visibility: hidden; }
+  100% {
+    visibility: visible; } }
+
+@keyframes hidden {
+  0% {
+    visibility: visible; }
+  30% {
+    visibility: visible; }
+  100% {
+    visibility: hidden; } }
+
+@keyframes open {
+  0% {
+    transform: translate(0em, 0em) rotateY(0deg); }
+  100% {
+    transform: translate(1em, 0em) rotateY(180deg); } }
+
+@keyframes openMobile {
+  0% {
+    transform: translate(0em, 0em) rotateX(0deg); }
+  100% {
+    transform: translate(0em, 1em) rotateX(-180deg); } }
 
 /*
 0 - 600px:      Phone
@@ -70,6 +101,10 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 html {
   font-size: 62.5%; }
+  html ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
   @media only screen and (max-width: 75em) {
     html {
       font-size: 56.25%; } }
@@ -109,40 +144,15 @@ ORDER: Base + typography > general layout + grid > page layout > components
 1em = 16px
 */
 body {
-  font-family: Arial, Helvetica, sans-serif; }
-
-body#background {
   background-color: #000;
   color: #fff;
-  animation: moveInLeft 3s 1;
-  text-align: center; }
+  font-family: 'pokeFontR' , sans-serif;
+  font-weight: 400;
+  line-height: 1.7; }
 
-#PoGo-Dex-title {
-  text-align: center; }
-
-div#pokeDex {
-  width: 31em;
-  height: 44em;
-  display: inline-flex;
-  cursor: pointer; }
-
-.btn {
-  width: 1em;
-  height: 1em; }
-
-.circle {
-  border-radius: 3em; }
-
-/* The entire pokeDex is clickable area. */
 @font-face {
   font-family: 'pokeFontR';
   src: url("../../fonts/Pokemon_Solid.ttf") format("truetype"); }
-
-body {
-  font-family: 'pokeFontR' , sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: #000; }
 
 .heading-primary {
   color: #fff;
@@ -229,144 +239,302 @@ body {
 .u-margin-top-huge {
   margin-top: 10rem !important; }
 
-div.pDFrontContainer {
-  z-index: 5;
-  height: 36em;
-  position: absolute;
-  width: inherit;
-  top: 13em; }
+header#mainNav {
+  grid-area: header;
+  grid-column: col-1start / col1-end;
+  grid-row: row1-start / row1-end; }
 
-div#pokeDexFront {
-  width: inherit;
-  height: 39em;
-  bottom: 1rem;
-  top: -2.5em;
-  position: absolute;
-  /* transform: translateX(26.5rem); */
-  background-color: #cd1c1c;
-  clip-path: polygon(62% 0, 100% 0, 100% 100%, 0 100%, 0 13%, 53% 13%); }
+div#pokeDex {
+  width: 45em;
+  height: 70em;
+  display: grid;
+  grid-template-columns: [col1-start] auto [col1-end col2-start] auto [col2-end];
+  grid-template-rows: [row1-start] 10em [row1-end row2-start] auto [row2-end];
+  grid-auto-rows: 0;
+  grid-auto-columns: 0;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  position: relative;
+  -webkit-perspective: 800em;
+  -moz-perspective: 800em;
+  -o-perspective: 800em;
+  perspective: 800em; }
 
-div#pDFrontOutline {
-  width: inherit;
-  height: 40em;
-  top: -3em;
-  position: absolute;
-  /* transform: translateX(26.5rem); */
-  background-color: #000;
-  clip-path: polygon(62% 0, 100% 0, 100% 100%, 0 100%, 0 13%, 53% 13%); }
-
-div.rightTriangle {
-  width: 0;
-  height: 0;
-  border-top: 1em solid transparent;
-  border-left: 2em solid #555;
-  border-bottom: 1em solid transparent;
-  position: absolute;
-  transform: translate(1em, 15em); }
-
-ul.pDSpine {
-  display: inline-grid;
-  width: 1em;
-  height: inherit;
-  float: right;
-  list-style-type: none; }
-
-ul.pDSpine > li {
-  border: 1px solid black; }
-
-div#pokeDexBack {
-  width: inherit;
-  height: inherit;
-  background-color: #cd1c1c; }
-
-ul.btnContainer {
-  list-style: unset;
+div.topCover {
   display: flex;
-  list-style-type: none;
+  grid-column: col1-start / col1-end;
+  grid-row: row1-start / row1-end;
+  z-index: 600; }
+
+.btn {
+  width: 1em;
+  height: 1em;
+  border-radius: .5em;
+  display: inline-flex; }
+  .btn.grid {
+    width: 10em;
+    height: 2.5em;
+    margin: .5em;
+    text-align: center; }
+  .btn.circle {
+    border-radius: 3em; }
+    .btn.circle.yellow {
+      display: inline-block; }
+
+#pogo-dex_front-cover.front-cover {
+  z-index: 2;
+  grid-column: col1-start / col1-end;
+  grid-row: row1-start / row2-end;
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  perspective-origin: left;
+  transform-origin: right;
+  clip-path: polygon(62% 0, 100% 0, 100% 100%, 0 100%, 0 13%, 53% 13%);
+  background-color: #cd1c1c;
+  animation-direction: reverse; }
+  #pogo-dex_front-cover.front-cover.flipped {
+    animation-direction: normal;
+    animation: open 3s forwards; }
+    @media only screen and (max-width: 37.5em) {
+      #pogo-dex_front-cover.front-cover.flipped {
+        transform-origin: bottom;
+        animation: openMobile 3s forwards; } }
+  #pogo-dex_front-cover.front-cover .front-cover_background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; }
+  #pogo-dex_front-cover.front-cover .front-cover_game-controller .right-triangle {
+    width: 0;
+    height: 0;
+    border-top: 1em solid transparent;
+    border-left: 2em solid #555;
+    border-bottom: 1em solid transparent;
+    position: absolute;
+    transform: translate(1em, 15em); }
+    #pogo-dex_front-cover.front-cover .front-cover_game-controller .right-triangle.flipped {
+      visibility: hidden; }
+  #pogo-dex_front-cover.front-cover .front-cover_game-controller .pd-spine {
+    display: inline-grid;
+    width: 1em;
+    height: inherit;
+    list-style-type: none; }
+    #pogo-dex_front-cover.front-cover .front-cover_game-controller .pd-spine span {
+      border: 1px solid black; }
+  #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover {
+    background-color: #cd1c1c;
+    vertical-align: top;
+    height: auto;
+    width: 45em;
+    transition: transform 0s;
+    visibility: hidden;
+    padding: 1em; }
+    #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover.visible {
+      visibility: visible;
+      grid-column: col2-start / col2-end;
+      grid-row: row1-end / row2end;
+      transform: scaleX(-1); }
+    #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover .inner-cover_btn-box {
+      visibility: hidden; }
+      #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover .inner-cover_btn-box.flipped {
+        padding: 10em 1em 1em;
+        animation: visible 3s forwards; }
+      @media only screen and (max-width: 37.5em) {
+        #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover .inner-cover_btn-box.flipped {
+          padding: 6em 1em 1em;
+          transform: scaleX(-1) scaleY(-1) translateY(-10em); } }
+      #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover .inner-cover_btn-box .text-box {
+        font-family: "Orbitron", sans-serif;
+        min-width: 40em;
+        height: 39em;
+        background-color: grey;
+        display: flex;
+        margin: 1em 0em 2em;
+        overflow: scroll; }
+        #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover .inner-cover_btn-box .text-box li.pokemonName {
+          display: inline-block;
+          text-align: center;
+          width: 100%;
+          height: calc(100%/10);
+          font-size: 2em; }
+        #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover .inner-cover_btn-box .text-box li.pokemonName:hover {
+          background-color: yellow;
+          color: black; }
+      #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover .inner-cover_btn-box .btn-row {
+        text-align: center;
+        font-family: "Montserrat", serif; }
+        #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover .inner-cover_btn-box .btn-row ul.grid-btn-bx {
+          width: inherit;
+          height: auto;
+          display: inline-block;
+          list-style-type: none; }
+          #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover .inner-cover_btn-box .btn-row ul.grid-btn-bx li.btn > p {
+            text-align: center;
+            margin: auto;
+            font-variant-caps: all-small-caps;
+            font-size: 1.5em; }
+        #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover .inner-cover_btn-box .btn-row .bottom-btn-bx {
+          display: flow-root; }
+          #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover .inner-cover_btn-box .btn-row .bottom-btn-bx ul.bottom-btn li.btn.grid.white {
+            color: black; }
+          #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover .inner-cover_btn-box .btn-row .bottom-btn-bx ul.bottom-btn li.btn > p {
+            text-align: center;
+            margin: auto;
+            font-variant-caps: all-small-caps;
+            font-size: 1.5em; }
+      #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover .inner-cover_btn-box .grey-btns ul.twoBtn.grey {
+        margin-top: 1em; }
+        #pogo-dex_front-cover.front-cover .front-cover_game-controller .front-inner-cover .inner-cover_btn-box .grey-btns ul.twoBtn.grey .grid-btn {
+          width: 5em;
+          height: 2em;
+          display: inline-flex; }
+
+#pogo-dex_front-cover .frontRedCover.flipped-open {
+  transform-origin: right;
+  animation: flipped-open 1s forwards; }
+
+@keyframes flipped-open {
+  0% {
+    transform: rotateY(0);
+    transform: translateX(0px); }
+  100% {
+    transform: rotateY(180deg);
+    transform: translateX(405px); } }
+
+#pogo-dex_front-cover .frontRedCover.flipped {
+  height: 63.5em; }
+
+.pogo-dex_back-cover {
+  width: inherit;
+  height: inherit;
+  background-color: #cd1c1c;
+  grid-column: col1-start / col1-end;
+  grid-row: row1-start / row2-end;
+  font-family: "Montserrat", serif; }
+  .pogo-dex_back-cover .back-cover {
+    width: auto;
+    height: 55em;
+    margin: 11em 0em 0em; }
+    .pogo-dex_back-cover .back-cover .back-cover_pd-spine {
+      display: inline-grid;
+      width: 1.3em;
+      height: 59em;
+      list-style-type: none;
+      transform: translateX(45em);
+      position: fixed;
+      background-color: #cd1c1c; }
+      .pogo-dex_back-cover .back-cover .back-cover_pd-spine span {
+        border: 1px solid black; }
+      @media only screen and (max-width: 37.5em) {
+        .pogo-dex_back-cover .back-cover .back-cover_pd-spine {
+          height: 43em;
+          transform: translate(22em, 38em) rotate(90deg); } }
+    .pogo-dex_back-cover .back-cover #sprite-screen {
+      position: relative;
+      display: grid;
+      grid-template-rows: 10em 26em 19em;
+      width: 42em;
+      height: 57em;
+      margin: 1em auto 2em;
+      background-color: #111f1f;
+      padding: 1em;
+      background: url(/assets/pokeball-wallpaper.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index: 1;
+      opacity: 1; }
+      .pogo-dex_back-cover .back-cover #sprite-screen .sprite-name {
+        grid-column: 1;
+        font-size: 4em;
+        display: inline-block;
+        font-variant-caps: all-small-caps; }
+      .pogo-dex_back-cover .back-cover #sprite-screen .sprite-img {
+        display: inline-block;
+        height: fit-content;
+        grid-column: 1;
+        background-color: white;
+        border-radius: 20em;
+        margin: 1em;
+        background: rgba(0, 0, 0, 0.5); }
+        .pogo-dex_back-cover .back-cover #sprite-screen .sprite-img img {
+          width: 100%;
+          height: auto; }
+      .pogo-dex_back-cover .back-cover #sprite-screen .sprite-type {
+        grid-column: 2; }
+      .pogo-dex_back-cover .back-cover #sprite-screen .stats-box {
+        grid-column: 2;
+        width: fit-content;
+        margin: 0;
+        display: inline-block;
+        font-size: 1.5em;
+        height: fit-content; }
+      .pogo-dex_back-cover .back-cover #sprite-screen .pokemon-data {
+        grid-column: 1 /span 2;
+        font-size: 1.5em; }
+    .pogo-dex_back-cover .back-cover #sprite-screen::after {
+      content: "";
+      background: url(/assets/pokeball-wallpaper.png);
+      opacity: 0.7;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -2; }
+    .pogo-dex_back-cover .back-cover .weight-type {
+      width: 30em;
+      height: 10em;
+      background-color: grey;
+      display: inline-block;
+      margin: 1em 2em; }
+    .pogo-dex_back-cover .back-cover .four-directional {
+      position: absolute;
+      z-index: -600;
+      clip-path: polygon(0% 30%, 30% 30%, 30% 0%, 70% 0%, 70% 30%, 100% 30%, 100% 70%, 70% 70%, 70% 100%, 30% 100%, 30% 70%, 0% 70%);
+      width: 8em;
+      height: 8em;
+      background-color: grey;
+      display: inline-block;
+      /* margin-bottom: 2em; */
+      /* margin-left: 1em; */ }
+      .pogo-dex_back-cover .back-cover .four-directional.four-directional.flipped {
+        z-index: 0;
+        right: 1em;
+        margin: 2em; }
+
+#PoGo-Dex-title {
+  text-align: center;
+  padding-right: 1em; }
+
+ul.navBarBox {
+  display: inline-flex; }
+
+li.navBtn {
+  list-style: none;
+  margin: auto;
+  padding: 0em .5em; }
+
+div.topCover {
   padding-top: 1em;
   padding-left: 1em;
   padding-bottom: 1em; }
 
-ul.btnContainer > li.btn {
+div.topCover > span.btn {
   border: 4px solid #000;
   width: 2em;
   height: 2em; }
 
-ul.btnContainer > li.btn.blue {
+div.topCover > span.btn.blue {
   width: 6em;
   height: 6em;
-  margin-right: 2em; }
+  margin-right: 2em;
+  font-size: 1.5em; }
 
-ul.btnContainer > li.btn.red,
-ul.btnContainer > li.btn.yellow,
-ul.btnContainer > li.btn.green {
+div.topCover > span.btn.red,
+div.topCover > span.btn.yellow,
+div.topCover > span.btn.green {
   margin-right: 0.5em; }
-
-div.mainPokeDex {
-  width: 30em;
-  height: 35em; }
-
-div#spriteScreen {
-  background-color: lightblue;
-  width: 20em;
-  height: 20em;
-  text-align: center;
-  margin: auto;
-  margin-top: 2em; }
-
-div.weightType {
-  width: 13em;
-  height: 9em;
-  background-color: grey;
-  display: inline-block;
-  margin: 2em; }
-
-div.fourDirectional {
-  clip-path: polygon(0% 30%, 30% 30%, 30% 0%, 70% 0%, 70% 30%, 100% 30%, 100% 70%, 70% 70%, 70% 100%, 30% 100%, 30% 70%, 0% 70%);
-  width: 8em;
-  height: 8em;
-  background-color: grey;
-  display: inline-block;
-  margin-bottom: 2em;
-  margin-left: 1em; }
-
-div.pdInnerCover {
-  background-color: #cd1c1c;
-  display: inline-block;
-  width: 31em;
-  height: 39em;
-  vertical-align: bottom;
-  margin-bottom: 1em;
-  clip-path: polygon(44% 0, 53% 11%, 100% 11%, 100% 100%, 0 100%, 0 0); }
-
-div.textBox {
-  width: 25em;
-  height: 15em;
-  background-color: grey;
-  display: inline-block;
-  margin: 7em 0em 2em; }
-
-ul.gridBtnCont {
-  width: 24em;
-  height: 3em;
-  display: inline-block;
-  list-style-type: none; }
-
-li.gridBtn {
-  width: 5em;
-  height: 2em;
-  display: inline-flex; }
-
-div.bottomBtn {
-  display: inline-block; }
-
-ul.twoBtn {
-  display: inline-block; }
-
-ul.twoBtn > li.circle.btn.yellow {
-  display: inline-flex;
-  margin: .5em 1em 0em 2em;
-  font-size: 2em; }
-
-ul.twoBtn.grey {
-  margin-top: 1em; }

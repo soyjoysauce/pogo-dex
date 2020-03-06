@@ -2,72 +2,166 @@
 
 //Back where screen/interactive buttons are at
 // 4 Buttons @ top Left
-div#pokeDexBack {
+
+.pogo-dex_back-cover {
   width: inherit;
   height: inherit;
-  background-color: $color-red;
-}
+  background-color: $red;
+  grid-column: col1-start / col1-end;
+  grid-row: row1-start / row2-end;
+  font-family: $montserrat;
 
-ul.btnContainer {
-  list-style: unset;
-  display: flex;
-  list-style-type: none;
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-bottom: 1em;
-}
+  .back-cover {
+    // padding-right: 2em;
+    width: auto;
+    height: 55em;
+    margin: 11em 0em 0em;
 
-ul.btnContainer > li.btn {
-  border: 4px solid $color-black;
-  width: 2em;
-  height: 2em;
-  // border-radius: 1em;
-}
+    .back-cover_pd-spine {
+      display: inline-grid;
+      width: 1.3em;
+      height: 59em;
+      list-style-type: none;
+      transform: translateX(45em);
+      position: fixed;
+      background-color: $red;
 
-ul.btnContainer > li.btn.blue {
-  width: 6em;
-  height: 6em;
-  // border-radius: 3em;
-  margin-right: 2em;
-}
+      span {
+        border: 1px solid black;
+      }
 
-ul.btnContainer > li.btn.red,
-ul.btnContainer > li.btn.yellow,
-ul.btnContainer > li.btn.green {
-  margin-right: 0.5em;
+      @include respond(phone) {
+        //width:1.3em;
+        height: 43em;
+        transform: translate(22em, 38em) rotate(90deg);
+      }
+
+    }
+
+    #sprite-screen {
+      position: relative;
+      display: grid;
+      grid-template-rows: 10em 26em 19em;
+      width: 42em;
+      height: 57em;
+      margin: 1em auto 2em;
+      background-color: #111f1f;
+      padding: 1em;
+      background: url(/assets/pokeball-wallpaper.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index: 1;
+      opacity: 1;
+
+      .sprite-name {
+        grid-column: 1;
+        font-size: 4em;
+        display: inline-block;
+        font-variant-caps: all-small-caps;
+      }
+
+      .sprite-img {
+        display: inline-block;
+        height: fit-content;
+        grid-column: 1;
+        background-color: white;
+        border-radius: 20em;
+        margin: 1em;
+        background: rgba(0, 0, 0, 0.5);
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+      }
+
+      .sprite-type {
+        grid-column: 2;
+      }
+
+      .stats-box {
+        grid-column: 2;
+        width: fit-content;
+        margin: 0;
+        display: inline-block;
+        font-size: 1.5em;
+        height: fit-content;
+      }
+
+      .pokemon-data {
+        grid-column: 1 /span 2;
+        font-size: 1.5em;
+      }
+
+    }
+
+    #sprite-screen::after {
+      content: "";
+      background: url(/assets/pokeball-wallpaper.png);
+      opacity: 0.7;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -2;
+    }
+
+    .weight-type {
+      //@
+      width: 30em;
+      height: 10em;
+      background-color: grey;
+      display: inline-block;
+      margin: 1em 2em;
+      //@
+    }
+
+    .four-directional {
+      //@
+      position: absolute;
+      z-index: -600;
+      clip-path: polygon(0% 30%, 30% 30%, 30% 0%, 70% 0%, 70% 30%, 100% 30%, 100% 70%, 70% 70%, 70% 100%, 30% 100%, 30% 70%, 0% 70%);
+      width: 8em;
+      height: 8em;
+      background-color: grey;
+      display: inline-block;
+
+      /* margin-bottom: 2em; */
+      /* margin-left: 1em; */
+      // position: absolute;
+      // z-index: 100;
+      //@
+      &.four-directional.flipped {
+        z-index: 0;
+        right: 1em;
+        margin: 2em;
+      }
+
+    }
+  }
+
 }
 
 //Inside pokeDexContainer
 
-div.mainPokeDex {
-  width: 30em;
-  height: 35em;
-}
 
-div#spriteScreen {
-  background-color: lightblue;
-  width: 20em;
-  height: 20em;
-  text-align: center;
-  margin: auto;
-  margin-top: 2em;
-}
 
-div.weightType {
-  width: 13em;
-  height: 9em;
-  background-color: grey;
-  display: inline-block;
-  margin: 2em;
-}
 
-div.fourDirectional {
-  clip-path: polygon(0% 30%, 30% 30%, 30% 0%, 70% 0%, 70% 30%, 100% 30%, 100% 70%, 70% 70%, 70% 100%, 30% 100%, 30% 70%, 0% 70%);
-  width: 8em;
-  height: 8em;
-  background-color: grey;
-  display: inline-block;
-  margin-bottom: 2em;
-  margin-left: 1em;
-}
 
+
+
+//PokeDex Spine Style
+// div.back-cover > div.pd-spine {
+//   display: inline-grid;
+//   width: 1em;
+//   height: inherit;
+//   float: right;
+//   list-style-type: none;
+// }
+
+// div.back-cover >  div.pd-spine> span {
+//   border: 1px solid black;
+// }

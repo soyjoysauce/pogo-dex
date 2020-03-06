@@ -8,12 +8,22 @@
 @import "base/typography";
 @import "base/utilities";
 @import "abstracts/functions";
+@import "layout/grid";
+@import "base/buttons";
 
 //components
 @import "components/frontCover";
 
 @import "components/backCover";
 
-@import "components/innerFrontCover";
+// @import "components/innerFrontCover";
+
+@import "components/navBar";
+
+@import "components/navButton";
 
 
+//Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');

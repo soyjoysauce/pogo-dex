@@ -8,67 +8,80 @@
   <link href="css/style.css" rel="stylesheet" />
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="index.js"></script>
-  
+  <script src="js/index.js"></script>
   <title>PoGo-Dex</title>
 </head>
 
 <body id="background">
   <h1 id="PoGo-Dex-title">PoGo Dex</h1>
   <div id="pokeDex">
-    <div class="pDFrontContainer">
-      <div id="pDFrontOutline"></div>
-      <div id="pokeDexFront">
-        <div class="rightTriangle"></div>
-        <ul class="pDSpine">
-          <li class="spine1"></li>
-          <li class="spine2"></li>
-          <li class="spine3"></li>
-        </ul>
+    <!-- Begin pokeDex Container -->
+    <div class="topCover">
+      <span id="openClose" class="circle btn blue"></span>
+      <span class="circle btn red"></span>
+      <span class="circle btn yellow"></span>
+      <span class="circle btn green"></span>
+    </div>
+    <!-- Begin div containing all 3 parts of 'front' cover -->
+    <div id="pogo-dex_front-cover" class="front-cover">
+      <!-- Begin the visible front of cover before 'flip' -->
+      <div class="front-cover_background"></div>
+      <div class="front-cover_game-controller">
+        <div class="right-triangle"></div>
+        <div class="pd-spine">
+          <span class="spine1"></span>
+          <span class="spine2"></span>
+          <span class="spine3"></span>
+        </div>
+        <div class="front-inner-cover">
+          <!-- Begin inner part of 'flip' Cover -->
+          <div class="inner-cover_btn-box">
+            <div class="text-box"></div>
+            <div class="btn-row">
+              <ul class="grid-btn-bx">
+                <li class="btn grid blue kanto"><p>kanto</p></li>
+                <li class="btn grid blue johto"><p>johto</p></li>
+                <li class="btn grid blue hoenn"><p>hoenn</p></li>
+                <li class="btn grid blue sinnoh"><p>sinnoh</p></li>
+                <li class="btn grid blue unova"><p>unova</p></li>
+              </ul>
+              <div class="bottom-btn-bx">
+                <ul class="bottom-btn">
+                  <li class="btn grid white clear"><p>Clear</p></li>
+                  <!-- <li class="btn grid white">Back</li> -->
+                  <!-- <li class="btn circle yellow"></li> -->
+                  <li class="btn grid grey-dark"><p>Back</p></li>
+                  <!-- <li class="btn grid grey-dark"></li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div id="pokeDexBack">
-      <!-- This is the back of the book -->
-      <ul class="btnContainer">
-        <li class="circle btn blue"></li>
-        <li class="circle btn red"></li>
-        <li class="circle btn yellow"></li>
-        <li class="circle btn green"></li>
-      </ul>
-      <div class="mainPokeDex">
-        <div id="spriteScreen"></div>
-        <div class="weightType"></div>
-        <div class="fourDirectional"></div>
+      <!-- End inner part of 'flip' Cover -->
+    </div> <!-- End the visible front of cover before 'flip' -->
+    <!-- </div> End div containing all 3 parts of 'front' cover -->
+    <div class="pogo-dex_back-cover">
+      <div class="back-cover">
+        <div class="back-cover_pd-spine">
+          <span class="spine1"></span>
+          <span class="spine2"></span>
+          <span class="spine3"></li>
+        </div>
+        <div id="sprite-screen">
+          <div class="sprite-name"></div>
+          <div class="sprite-type"></div>
+          <div class="sprite-img"></div>
+          <div class="stats-box"></div>
+          <div class="pokemon-data"></div>
+        </div>
+        <!-- <div class="weight-type"></div> -->
+        <!-- <div class="four-directional"></div> -->
       </div>
-    </div>
-  </div>
-  <!-- //pokeDexContainer -->
-  <div class="pdInnerCover">
-    <div class="textBox"></div>
-    <ul class="gridBtnCont">
-      <li class="gridBtn blue"></li>
-      <li class="gridBtn blue"></li>
-      <li class="gridBtn blue"></li>
-      <li class="gridBtn blue"></li>
-      <li class="gridBtn blue"></li>
-      <li class="gridBtn blue"></li>
-      <li class="gridBtn blue"></li>
-      <li class="gridBtn blue"></li>
-    </ul>
-    <div class="bottomBtn">
-      <ul class="twoBtn">
-        <li class="gridBtn white"></li>
-        <li class="gridBtn white"></li>
-        <li class="circle btn yellow"></li>
-      </ul>
-    </div>
-    <div>
-      <ul class="twoBtn grey">
-        <li class="gridBtn grey-dark"></li>
-        <li class="gridBtn grey-dark"></li>
-      </ul>
-    </div>
-  </div>
+    </div> <!-- End 'back' of pokeDex -->
+  </div> <!-- End pokeDex Container -->
 </body>
-
 </html>
+
+
+

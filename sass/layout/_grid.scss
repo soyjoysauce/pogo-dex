@@ -1,0 +1,42 @@
+// div#bodyGrid {
+//   display: grid;
+//   grid-template-columns: [col1-start] auto [col1-end col-2start] auto [col2-end];
+//   grid-template-rows: [row1-start] auto [row2-start];
+//   // grid-template-areas: "header header header" "main main main" "footer footer footer";
+//   grid-auto-rows: 0;
+//   grid-auto-columns: 0;
+// }
+
+header#mainNav {
+  grid-area: header;
+  grid-column: col-1start / col1-end;
+  grid-row: row1-start / row1-end;
+}
+
+div#pokeDex {
+  width: 45em;
+  height: 70em;
+  display: grid;
+  grid-template-columns: [col1-start] auto [col1-end col2-start] auto [col2-end];
+  grid-template-rows: [row1-start] 10em [row1-end row2-start] auto[row2-end];
+  grid-auto-rows: 0;
+  grid-auto-columns: 0;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  //@
+  position: relative;
+  // margin: 0em auto 40em;
+  -webkit-perspective: 800em;
+  -moz-perspective: 800em;
+  -o-perspective: 800em;
+  perspective: 800em;
+  //@
+}
+
+div.topCover {
+  display: flex;
+  // position: absolute;
+  grid-column: col1-start / col1-end;
+  grid-row: row1-start / row1-end;
+  z-index: 600;
+}
